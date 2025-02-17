@@ -1,0 +1,11 @@
+git config --global user.name joaopedro-dev-sudo
+git config --global user.email pedrosantoaraujo0908@gmail.com
+
+abrir o terminal - ctrl + '
+
+criar um projeto react native com Expo:
+https://github.com/joaopedro-dev-sudo/SilvinHaheathApp.git
+
+cd silvinhahealthApp
+
+Extensão: Pesquisa react -> es7+ React/Redux/React
