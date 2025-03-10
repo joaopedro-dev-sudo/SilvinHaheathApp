@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function App() {
   return (
@@ -8,17 +8,32 @@ export default function App() {
         <Text style={styles.title}>Silvinha Health APP</Text>
       </View>
 
-      <View syle= {styles.content}>
+      <View> syle= {styles.content}
       <Text style={styles.subTitle}>calculadora de imc</Text> 
+      <view>
+     
 
-      </View>
-      <Text style={styles.label}>altura</Text>
-         
+    </view>
       
       <StatusBar style="light" />
     </SafeAreaView>
   );
 }
+
+<View style={{margintop: 25 }}>
+        <Text style={styles.label}>altura</Text>
+        <TextInput
+        style={styles.Input}
+        placeholder='ex. 1.70'
+        keyboardtype='numeric'
+          />
+        <Text style={styles.label}>altura</Text>
+        <TextInput
+        style={styles.Input}
+        placeholder='ex. 1.70'
+        keyboardtype='numeric'
+          />
+      </View>
 
 const styles = StyleSheet.create({
   container: {
@@ -39,8 +54,6 @@ titleText: {
   fontweight: 'bold',
   marginbottom: 20,
   },
-
-
   content: {
     flex: 1,
     padding: 40,
@@ -53,5 +66,17 @@ titleText: {
     color: '#f233c',
     fontweight: 'bold',
     marginbottom: 40,
+  },
+  label: {
+    color: '#000',
+    fontSize: 18,
+  },
+  input: {
+    height: 45,
+    width: '100%',
+    fontSize: 18,
+    bordercolor: '#ef233c',
+    borderWidth: 3,
+    marginvertical: 5,
   }
 });
