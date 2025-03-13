@@ -1,39 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View, TextInput } from 'react-native';
-
-export default function App() {
+import { StatusBar } from 'expo-status-bar'
+import { SafeAreaView, StyleSheet, text, view, textinput, touchableOpacity } from 'react-native'
+import Ionicons from "@expo/vector-icons/Ionicons"
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titleBox}>
         <Text style={styles.title}>Silvinha Health APP</Text>
       </View>
 
-      <View> syle= {styles.content}
+      <View style= {styles.content}> 
       <Text style={styles.subTitle}>calculadora de imc</Text> 
-      <view>
+      <View>
      
-
-    </view>
+    </View>
       
       <StatusBar style="light" />
+
+    <View style={{margintop: 25 }}>
+        <Text style={styles.label}>altura</Text>
+        <TextInput
+        style={styles.Input}
+        placeholder='ex. 1.70'
+        keyboardtype='numeric'
+          />
+        <Text style={styles.label}>altura</Text>
+        <TextInput
+        style={styles.Input}
+        placeholder='ex. 1.70'
+        keyboardtype='numeric'
+        />
+      </View>
+
+      <Touchableopacity 
+        style={styles.button}
+        onPress={() => alert('AHHHHHHHHHHHHH')}
+        <Ionicons name={"calculator-sharp"} size={24} color="#edf2f4" />
+        <text style={styles.text}>calcular</text>
+    </View>
     </SafeAreaView>
   );
 }
 
-<View style={{margintop: 25 }}>
-        <Text style={styles.label}>altura</Text>
-        <TextInput
-        style={styles.Input}
-        placeholder='ex. 1.70'
-        keyboardtype='numeric'
-          />
-        <Text style={styles.label}>altura</Text>
-        <TextInput
-        style={styles.Input}
-        placeholder='ex. 1.70'
-        keyboardtype='numeric'
-          />
-      </View>
+
 
 const styles = StyleSheet.create({
   container: {
@@ -78,5 +85,22 @@ titleText: {
     bordercolor: '#ef233c',
     borderWidth: 3,
     marginvertical: 5,
+  },
+  button: {
+    width: '100%',
+    paddingVertical: 15,
+    flexdirection: 'row',
+    justifyContent: 'center',
+    alingnItems: 'center',
+    backgroundColor: '#ef233c',
+    borderradius: 15,
+    margintop: 40,
+    marginbottom: 10,
+  },
+  text: {
+    color: '#edf2f4',
+    fontSize: 24,
+    fontweight: 'bold',
+    marginleft: 5
   }
 });
