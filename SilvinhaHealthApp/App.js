@@ -1,41 +1,51 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar'
-import { SafeAreaView, StyleSheet, text, view, textinput, touchableOpacity } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import Ionicons from "@expo/vector-icons/Ionicons"
+
+export default function App() {
+  const [height, setHeight] = useState(null);
+  const [weight, setweight] = useState(null);
+  const [imc, setImc] = useState(null);
+  [textButton, setTextButton] = useState("calcular");
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titleBox}>
         <Text style={styles.title}>Silvinha Health APP</Text>
       </View>
 
-      <View style= {styles.content}> 
-      <Text style={styles.subTitle}>calculadora de imc</Text> 
-      <View>
-     
-    </View>
-      
-      <StatusBar style="light" />
+      <View style={styles.content}>
+        <Text style={styles.subTitle}>calculadora de imc</Text>
 
-    <View style={{margintop: 25 }}>
-        <Text style={styles.label}>altura</Text>
-        <TextInput
-        style={styles.Input}
-        placeholder='ex. 1.70'
-        keyboardtype='numeric'
+        <View>
+          <Text style={styles.label}>altura</Text>
+          <TextInput
+            style={styles.Input}
+            placeholder='ex. 1.70'
+            keyboardtype='numeric'
           />
-        <Text style={styles.label}>altura</Text>
-        <TextInput
-        style={styles.Input}
-        placeholder='ex. 1.70'
-        keyboardtype='numeric'
-        />
-      </View>
+        </View>
 
-      <Touchableopacity 
-        style={styles.button}
-        onPress={() => alert('AHHHHHHHHHHHHH')}
-        <Ionicons name={"calculator-sharp"} size={24} color="#edf2f4" />
-        <text style={styles.text}>calcular</text>
-    </View>
+        <View style={{ margintop: 25 }}>
+          <Text style={styles.label}>altura</Text>
+          <TextInput
+            style={styles.Input}
+            placeholder='ex. 1.70'
+            keyboardtype='numeric'
+          />
+        </View>
+
+        <TouchableOpacity style={styles.button} onPress={() => alert('AHHHHHHHHHHHHH')}>
+          <Ionicons name={"calculator-sharp"} size={24} color="#edf2f4" />
+          <Text style={styles.text}>calcular</Text>
+        </TouchableOpacity>
+
+        <View style={styles.imcContainer}>
+          <Text style={styles.imctext}>preencha o peso e a altura</Text>
+          <Text style={styles.imcResult}>666</Text>
+        </View>
+      </View>
+      <StatusBar style="light" />
     </SafeAreaView>
   );
 }
@@ -47,19 +57,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#edf2f4',
   },
-tittleBox: {
-alignItems: 'center',
-justifyContent: 'flex-end',
-height: 100,
-backgroundColor: '#ef233c',
-borderBottomStartRadius: 25,
-borderBottomEndRadius: 25,
-},
-titleText: {
-  color: '#edf2f4',
-  fontsize: 28,
-  fontweight: 'bold',
-  marginbottom: 20,
+  tittleBox: {
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    height: 100,
+    backgroundColor: '#ef233c',
+    borderBottomStartRadius: 25,
+    borderBottomEndRadius: 25,
+  },
+  titleText: {
+    color: '#edf2f4',
+    fontsize: 28,
+    fontweight: 'bold',
+    marginbottom: 20,
   },
   content: {
     flex: 1,
@@ -102,5 +112,21 @@ titleText: {
     fontSize: 24,
     fontweight: 'bold',
     marginleft: 5
+  },
+  imcContainercointainer:{
+    flex: 1,
+    alingnItems: 'center',
+    justifycontent: 'center',
+    width: '100%',
+  },
+  imctext: {
+    fontSize: 18,
+    color: '#ef233c',
+    fontweight: 'bold'
+  },
+  imcResult: {
+    fontSize: 48,
+    color: '#ef233c',
+    fontweight: 'bold'
   }
-});
+})
