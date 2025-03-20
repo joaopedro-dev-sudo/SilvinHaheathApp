@@ -2,9 +2,11 @@ git config --global user.name joaopedro-dev-sudo
 git config --global user.email pedrosantoaraujo0908@gmail.com
 
 abrir o terminal - ctrl + '
+npm i
+npx expo start --localhost --android 
 
 criar um projeto react native com Expo:
-https://github.com/joaopedro-dev-sudo/SilvinHaheathApp.git
+
 
 cd silvinhahealthApp
 
